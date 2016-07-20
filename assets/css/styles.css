@@ -10,9 +10,10 @@
 
 @import url(https://fonts.googleapis.com/css?family=Inconsolata);
 
-center *{
+.center *{
   text-align: center!important;
 }
+
 body {
   font-family: 'Lato', arial, sans-serif;
   color: #434343;

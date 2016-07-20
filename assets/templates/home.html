@@ -15,8 +15,13 @@
                 <li><a href="https://github.com/simoninithomas"><i class="fa fa-github-alt"></i></a></li>
             </ul>
         </div><!--//profile-->
-        <a class="btn btn-cta-primary pull-right" href="mailto:simonini_thomas@outlook.fr" target="_blank"><i class="fa fa-paper-plane"></i> Me Contacter</a>
-
+        <a class="btn btn-cta-primary pull-right" href="mailto:simonini_thomas@outlook.fr" target="_blank"><i class="fa fa-paper-plane"></i>{{ 'CONTACT_ME' | translate }}</a>
+    <div class="row">
+        <div class="center">
+            <a ng-click="changeLanguage('en');" class="btn btn-danger btn-lg" data-wow-delay="0.7s">English</a>
+            <a ng-click="changeLanguage('fr');" class="btn btn-success btn-lg" data-wow-delay="0.7s">French</a>
+        </div>
+    </div>
     </div><!--//container-->
 
 </header><!--//header-->
@@ -26,22 +31,22 @@
         <div class="primary col-md-8 col-sm-12 col-xs-12">
             <section class="about section">
                 <div class="section-inner">
-                    <h2 class="heading">A propos</h2>
+                    <h2 class="heading" translate="ABOUT_TITLE"></h2>
                     <div class="content">
-                        <p>Je suis développeur et entrepreneur sur Lyon (Incubé à l'<a href="http://entreprendre.univ-lyon3.fr/incubateur-jean-moulin/">Incubateur Jean Moulin</a>). Notamment spécialisé en NodeJS et Express pour les languages backend. En HTML, CSS, AngularJS pour le FrontEnd. Ionic (cordova) et Android (Java) pour le développement d'applications. </p>
+                        <p translate="ABOUT"></p>
                     </div><!--//content-->
                 </div><!--//section-inner-->
             </section><!--//section-->
 
             <section class="latest section">
                 <div class="section-inner">
-                    <h2 class="heading">Derniers projets</h2>
+                    <h2 class="heading">{{"LAST_PROJECTS" | translate }}</h2>
                     <div class="content">
 
                         <div class="item featured text-center">
-                            <h3 class="title">Réalité augmentée</h3>
-                            <p><i class="fa fa-calendar" aria-hidden="true"></i>  </p>
-                            <p class="summary">Expérimentations de créations en réalité augmentée</p>
+                            <h3 class="title">{{"PROJECT8_TITLE" | translate }}</h3>
+                            <p><i class="fa fa-calendar" aria-hidden="true"></i> {{"PROJECT8_DATE" | translate }}  </p>
+                            <p class="summary">{{"PROJECT8_DESCRIPTION" | translate }}</p>
                             <div class="featured-image center">
                                 <a href="http://themes.3rdwavemedia.com/website-templates/responsive-bootstrap-theme-for-products-velocity/" target="_blank">
                                     <img class="img-responsive project-image" src="assets/images/giphy.gif"/>
@@ -57,26 +62,23 @@
 
                         <div class="item row">
                             <a class="col-md-4 col-sm-4 col-xs-12" href="#" target="_blank">
-                                <img class="img-responsive project-image" src="assets/images/projects/Cover2.png" alt="project name" />
-                            </a>
-                            <div class="desc col-md-8 col-sm-8 col-xs-12">
-                                <h3 class="title"><a href="#" target="_blank">Fondateur de NewsSwipe</h3>
-                                <p><i class="fa fa-calendar" aria-hidden="true"></i> Novembre 2015 - Avril 2016 </p>
-                                <p> NewsSwipe, est une application smartphone de news qui regroupe les médias d’informations. Le but est de générer avec une expérience utilisateur innovante des <span class="bold">articles adaptés aux goûts de l’utilisateur tout en lui faisant découvrir des médias qu’il ne connaissait pas</span>. Il peut décider de lire l’article proposé en « swipant » à gauche ou à droite pour passer à un autre. Cette application fonctionne grâce à un crawler (Robot d’indexation) intitulé NewsCrawlBot, c’est un <span class="bold">robot scannant les articles des différents médias afin de les classer selon leurs thèmes</span>. Afin d’être proposés uniquement aux utilisateurs aimant ledit thème.  <br></p>
-                                <!--<p><a class="more-link" href="" target="_blank"><i class="fa fa-external-link"></i> NewsSwipe</a></p>-->
-                            </div><!--//desc-->
-                        </div><!--//item-->
-                        <hr class="divider" />
-
-                        <div class="item row">
-                            <a class="col-md-4 col-sm-4 col-xs-12" href="#" target="_blank">
                                 <img class="img-responsive project-image" src="assets/images/PrestashopLogo.jpg" alt="Prestashop" />
                             </a>
                             <div class="desc col-md-8 col-sm-8 col-xs-12">
-                                <h3 class="title"><a href="#" target="_blank">Mise en place et intégration d'une Marketplace Prestashop <i class="fa fa-copyright" aria-hidden="true"></i> pour l'Université Lyon III</a></h3>
-                                <p><i class="fa fa-calendar" aria-hidden="true"></i> Juin 2016 </p>
-                                <p> Intégration d'une marketplace pour la vente de goodies à l'image de l'Université Jean Moulin (Lyon III)  <br></p>
-                                <!--<p><a class="more-link" href="" target="_blank"><i class="fa fa-external-link"></i> NewsSwipe</a></p>-->
+                                <h3 class="title" TRANSLATE="PROJECT7_TITLE"></h3>
+                                <p><i class="fa fa-calendar" aria-hidden="true"></i> {{"PROJECT7_DATE" | translate }} </p>
+                                <p>{{"PROJECT7_DESCRIPTION" | translate }} </p><!--<p><a class="more-link" href="" target="_blank"><i class="fa fa-external-link"></i> NewsSwipe</a></p>-->
+                            </div><!--//desc-->
+                        </div><!--//item-->
+                        <div class="item row">
+                            <a class="col-md-4 col-sm-4 col-xs-12" href="#" target="_blank">
+                                <img class="img-responsive project-image" src="assets/images/projects/Cover2.png" alt="NewsSwipe" />
+                            </a>
+                            <div class="desc col-md-8 col-sm-8 col-xs-12">
+                                <h3 class="title"><a href="#" target="_blank">{{"PROJECT6_TITLE" | translate }}</a></h3>
+                                <p><i class="fa fa-calendar" aria-hidden="true"></i> {{"PROJECT6_DATE" | translate }} </p>
+                                <p>{{"PROJECT6_DESCRIPTION" | translate }} <br></p>
+                                <p><a class="more-link" href="http://www.newsswipe.io" target="_blank"><i class="fa fa-external-link"></i> {{"PROJECT6_LINK" | translate }}</a></p>
                             </div><!--//desc-->
                         </div><!--//item-->
 
@@ -85,10 +87,10 @@
                                 <img class="img-responsive project-image" src="assets/images/projects/Cover2.png" alt="NewsSwipe" />
                             </a>
                             <div class="desc col-md-8 col-sm-8 col-xs-12">
-                                <h3 class="title"><a href="#" target="_blank">NewsSwipe Site web officiel</a></h3>
-                                <p><i class="fa fa-calendar" aria-hidden="true"></i> Janvier 2016 </p>
-                                <p>Site officiel du projet NewsSwipe développé en HTML, CSS, AngularJS  <br></p>
-                                <p><a class="more-link" href="http://www.newsswipe.io" target="_blank"><i class="fa fa-external-link"></i> NewsSwipe</a></p>
+                                <h3 class="title"><a href="#" target="_blank">{{"PROJECT5_TITLE" | translate }}</a></h3>
+                                <p><i class="fa fa-calendar" aria-hidden="true"></i> {{"PROJECT5_DATE" | translate }} </p>
+                                <p>{{"PROJECT5_DESCRIPTION" | translate }} <br></p>
+                                <p><a class="more-link" href="http://www.newsswipe.io" target="_blank"><i class="fa fa-external-link"></i> {{"PROJECT5_LINK" | translate }}</a></p>
                             </div><!--//desc-->
                         </div><!--//item-->
 
@@ -97,9 +99,10 @@
                                 <img class="img-responsive project-image" src="assets/images/projects/NCB.png" alt="project name" />
                             </a>
                             <div class="desc col-md-8 col-sm-8 col-xs-12">
-                                <h3 class="title"><a href="#" target="_blank">NewsCrawlBot </a><span class="label label-success">Open Source</span></h3>
-                                <p>Crawler en Python indexant les articles de 10 médias français (Figaro, le Monde, Challenges, Maddyness...) et les classant selon leurs thèmes. Afin d’être proposés uniquement aux utilisateurs aimant ledit thème. Renvoyant ses résultats sur un backend en Parse (BAAS)</p>
-                                <p><a class="more-link" href="https://github.com/simoninithomas/News-Crawler-Parse-Backend" target="_blank"><i class="fa fa-external-link"></i> Lien GitHub</a></p>
+                                <h3 class="title"><a href="#" target="_blank">{{"PROJECT4_TITLE" | translate }} </a><span class="label label-success">Open Source</span></h3>
+                                <p><i class="fa fa-calendar" aria-hidden="true"></i> {{"PROJECT4_DATE" | translate }} </p>
+                                <p>{{"PROJECT4_DESCRIPTION" | translate }}<p>
+                                <a class="more-link" href="https://github.com/simoninithomas/News-Crawler-Parse-Backend" target="_blank"><i class="fa fa-external-link"></i> {{"PROJECT4_LINK" | translate }}</a></p>
                             </div><!--//desc-->
                         </div><!--//item-->
 
@@ -108,11 +111,10 @@
                                 <img class="img-responsive project-image" src="assets/images/projects/screenshot1EN.png" alt="DuckJump" />
                             </a>
                             <div class="desc col-md-8 col-sm-8 col-xs-12">
-                                <h3 class="title"><a href="#" target="_blank">DuckJump jeu vidéo sur Android</a></h3>
-                                <p><i class="fa fa-calendar" aria-hidden="true"></i> Mai 2015 - Juin 2015 </p>
-                                <p>Jeu d'action développé en C# pour Android avec le moteur de jeu Unity. <br>
-                                    Le principe : Faites sauter le canard pour éviter les ennemis.</p>
-                                <p><a class="more-link" href="https://play.google.com/store/apps/details?id=com.Alumni.DuckJump" target="_blank"><i class="fa fa-external-link"></i> Télécharger sur Android</a></p>
+                                <h3 class="title"><a href="#" target="_blank">{{"PROJECT3_TITLE" | translate }}</a></h3>
+                                <p><i class="fa fa-calendar" aria-hidden="true"></i> {{"PROJECT3_DATE" | translate }}  </p>
+                                <p>{{"PROJECT3_DESCRIPTION" | translate }}</p>
+                                <p><a class="more-link" href="https://play.google.com/store/apps/details?id=com.Alumni.DuckJump" target="_blank"><i class="fa fa-external-link"></i> {{"PROJECT3_LINK" | translate }}</a></p>
                             </div><!--//desc-->
                         </div><!--//item-->
 
@@ -121,11 +123,10 @@
                                 <img class="img-responsive project-image" src="assets/images/projects/Tiles.png" alt="30Tiles" />
                             </a>
                             <div class="desc col-md-8 col-sm-8 col-xs-12">
-                                <h3 class="title"><a href="#" target="_blank">30Tiles jeu vidéo sur Android</a></h3>
-                                <p><i class="fa fa-calendar" aria-hidden="true"></i> Mars 2015 </p>
-                                <p>Jeu de réflexe développé en C# pour Android avec le moteur de jeu Unity. <br>
-                                    Le principe : Touchez tous les carreaux qui correspondent à la couleur affichée, plus vous en touchez, plus vous gagnez des secondes et des points. MAIS ATTENTION, la couleur des carreaux change toutes les 3 secondes !</p>
-                                <p><a class="more-link" href="https://play.google.com/store/apps/details?id=com.Alumni.Tiles/" target="_blank"><i class="fa fa-external-link"></i> Télécharger sur Android</a></p>
+                                <h3 class="title"><a href="#" target="_blank">{{"PROJECT2_TITLE" | translate }}</a></h3>
+                                <p><i class="fa fa-calendar" aria-hidden="true"></i> {{"PROJECT2_DATE" | translate }}  </p>
+                                <p>{{"PROJECT2_DESCRIPTION" | translate }}</p>
+                                <p><a class="more-link" href="https://play.google.com/store/apps/details?id=com.Alumni.Tiles/" target="_blank"><i class="fa fa-external-link"></i> {{"PROJECT2_LINK" | translate }}</a></p>
                             </div><!--//desc-->
                         </div><!--//item-->
 
@@ -135,10 +136,10 @@
                                 <img class="img-responsive project-image" src="assets/images/projects/c'est%20decide%20je%20m'en%20vais.jpg" alt="C'est décidé je m'en vais" />
                             </a>
                             <div class="desc col-md-8 col-sm-8 col-xs-12">
-                                <h3 class="title"><a href="#" target="_blank">C'est décidé je m'en vais" ebook pour enfants sur Amazon Kindle Publishing</a></h3>
-                                <p><i class="fa fa-calendar" aria-hidden="true"></i> Décembre 2014</p>
-                                <p> Illustrations effecutées avec Blender. </p>
-                                <p><a class="more-link" href="http://simonini-thomas.deviantart.com/art/Scene-2-500845562" target="_blank"><i class="fa fa-external-link"></i> Voir des illustrations</a></p>
+                                <h3 class="title"><a href="#" target="_blank">{{"PROJECT1_TITLE" | translate }}</a></h3>
+                                <p><i class="fa fa-calendar" aria-hidden="true"></i> {{"PROJECT1_DATE" | translate }} </p>
+                                <p> {{"PROJECT1_DESCRIPTION" | translate }} </p>
+                                <p><a class="more-link" href="http://simonini-thomas.deviantart.com/art/Scene-2-500845562" target="_blank"><i class="fa fa-external-link"></i> {{"PROJECT1_LINK" | translate }}</a></p>
                             </div><!--//desc-->
                         </div><!--//item-->
 
@@ -174,23 +175,23 @@
 
             <section class="experience section">
                 <div class="section-inner">
-                    <h2 class="heading">Expériences professionnelles</h2>
+                    <h2 class="heading">{{"PROFESSIONNAL_EXPERIENCES" | translate }}</h2>
                     <div class="content">
                         <div class="item">
-                            <h3 class="title">Stagiaire : intégrateur d'une marketplace Prestashop <i class="fa fa-copyright" aria-hidden="true"></i> - <span class="place"><a href="http://entreprendre.univ-lyon3.fr/incubateur-jean-moulin/">Incubateur Jean Moulin</a></span> <span class="year">(Juin 2016 - Septembre 2016)</span></h3>
+                            <h3 class="title" TRANSLATE="PROFESSIONNAL_TITLE4" ></h3>
                             <p>Mise en place et intégration d'une Marketplace Prestashop <i class="fa fa-copyright" aria-hidden="true"></i> pour l'Université Lyon III</p>
                         </div><!--//item-->
                         <div class="item">
-                            <h3 class="title">Fondateur et Développeur Android - <span class="place"><a href="#">NewsSwipe</a></span> <span class="year">(2015 - 2016)</span></h3>
+                            <h3 class="title">{{"PROFESSIONNAL_TITLE3" | translate }} <span class="place"><a href="#">{{"PROFESSIONAL_SUBTITLE3" | translate }}</a></span></h3>
                             <p>NewsSwipe, est une application smartphone de news qui regroupe les médias d’informations. Le but est de générer avec une expérience utilisateur innovante des <span class="bold">articles adaptés aux goûts de l’utilisateur tout en lui faisant découvrir des médias qu’il ne connaissait pas</span>. Il peut décider de lire l’article proposé en « swipant » à gauche ou à droite pour passer à un autre. <span class="bold">Cette application fonctionne grâce à un crawler (Robot d’indexation) intitulé NewsCrawlBot, c’est un robot scannant les articles des différents médias afin de les classer selon leurs thèmes. Afin d’être proposés uniquement aux utilisateurs aimant ledit thème.</span>  </p>
                         </div><!--//item-->
                         <div class="item">
-                            <h3 class="title">Chargé d'accueil - <span class="place"><a href="#">Société générale Tournon</a></span> <span class="year">(Eté 2013; Eté 2014; Eté 2015)</span></h3>
+                            <h3 class="title">{{"PROFESSIONNAL_TITLE2" | translate }} <span class="place"><a href="#">{{"PROFESSIONAL_SUBTITLE2" | translate }}</a></span></h3>
                             <p>Accueil des clients (remise des chèques, prise de rendez vous, réalisation de virements, déblocage cartes), archivage et mise en conformité des dossiers clients, standard téléphonique. </p>
                         </div><!--//item-->
 
                         <div class="item">
-                            <h3 class="title">Fondateur et Développeur Web- <span class="place"><a href="#">Alumni</a></span> <span class="year">(2014 - 2015)</span></h3>
+                            <h3 class="title">{{"PROFESSIONNAL_TITLE1" | translate }} <span class="place"><a href="#">{{"PROFESSIONAL_SUBTITLE1" | translate }}</a></span> <span class="year"></span></h3>
                             <p>Start-up web qui permettait aux anciens étudiants de pouvoir noter et commenter les formations qu'ils ont effecutées selon 3 critières (qualité de la formation, des infrastructures, réels débouchés professionnels) afin de permettre aux étudiants de pouvoir choisir leurs formations.</p>
                         </div><!--//item-->
 
@@ -199,7 +200,7 @@
             </section><!--//section-->
             <section class="github section">
                 <div class="section-inner">
-                    <h2 class="heading">Mon GitHub</h2>
+                    <h2 class="heading">{{"GITHUB" | translate }}</h2>
 
 
                     <div id="github-graph" class="github-graph">
@@ -219,10 +220,10 @@
                     <h2 class="heading sr-only">Basic Information</h2>
                     <div class="content">
                         <ul class="list-unstyled">
-                            <li><i class="fa fa-map-marker"></i><span class="sr-only">Location:</span>Lyon, France</li>
-                            <li><i class="fa fa-envelope-o"></i><span class="sr-only">Email:</span><a href="mailto:simonini_thomas@outlook.fr">simonini_thomas@outlook.fr</a></li>
-                            <li><i class="fa fa-mobile-phone"></i><span class="sr-only">Email:</span> 06 70 23 46 06</li>
-                            <li><i class="fa fa-link"></i><span class="sr-only">Website:</span><a href="http://www.simoninithomas.com">www.simoninithomas.com</a></li>
+                            <li><i class="fa fa-map-marker"></i><span class="sr-only">Location:</span>{{"POSITION" | translate }}</li>
+                            <li><i class="fa fa-envelope-o"></i><span class="sr-only">Email:</span><a href="mailto:simonini_thomas@outlook.fr">{{ "EMAIL" | translate  }}</a></li>
+                            <li><i class="fa fa-mobile-phone"></i><span class="sr-only">Email:</span> {{"MOBILE_PHONE"  | translate }}</li>
+                            <li><i class="fa fa-link"></i><span class="sr-only">Website:</span><a href="http://www.simoninithomas.com">{{"WEBSITE"  | translate }}</a></li>
                         </ul>
                     </div><!--//content-->
                 </div><!--//section-inner-->
@@ -230,13 +231,13 @@
 
             <aside class="skills aside section">
                 <div class="section-inner">
-                    <h2 class="heading">Compétences</h2>
+                    <h2 class="heading">{{ "COMPETENCES"  | translate }}</h2>
                     <div class="content">
 
                         <div class="skillset">
 
                             <div class="item">
-                                <h3 class="level-title">HTML - CSS (Bootstrap)<span class="level-label" data-toggle="tooltip" data-placement="left" data-animation="true" title="You can use the tooltip to add more info...">Expert</span></h3>
+                                <h3 class="level-title">{{"COMPETENCES_1"  | translate }}<span class="level-label" data-toggle="tooltip" data-placement="left" data-animation="true" title="You can use the tooltip to add more info...">{{ "EXPERT" | translate  }}</span></h3>
                                 <div class="level-bar">
                                     <div class="level-bar-inner" data-level="98%">
                                     </div>
@@ -244,7 +245,7 @@
                             </div><!--//item-->
 
                             <div class="item">
-                                <h3 class="level-title">PHP & MySQL<span class="level-label">Expert</span></h3>
+                                <h3 class="level-title">{{"COMPETENCES_2"  | translate }}<span class="level-label">{{ "EXPERT" | translate  }}</span></h3>
                                 <div class="level-bar">
                                     <div class="level-bar-inner" data-level="96%">
                                     </div>
@@ -252,7 +253,7 @@
                             </div><!--//item-->
 
                             <div class="item">
-                                <h3 class="level-title">NodeJS & Express<span class="level-label">Expert</span></h3>
+                                <h3 class="level-title">{{"COMPETENCES_3"  | translate }}<span class="level-label">{{ "EXPERT" | translate  }}</span></h3>
                                 <div class="level-bar">
                                     <div class="level-bar-inner" data-level="96%">
                                     </div>
@@ -260,7 +261,7 @@
                             </div><!--//item-->
 
                             <div class="item">
-                                <h3 class="level-title">MongoDB<span class="level-label">Pro</span></h3>
+                                <h3 class="level-title">{{"COMPETENCES_4"  | translate }}<span class="level-label"> {{ "PRO" | translate  }}</span></h3>
                                 <div class="level-bar">
                                     <div class="level-bar-inner" data-level="85%">
                                     </div>
@@ -268,7 +269,7 @@
                             </div><!--//item-->
 
                             <div class="item">
-                                <h3 class="level-title">AngularJS<span class="level-label">Pro</span></h3>
+                                <h3 class="level-title">{{"COMPETENCES_5"  | translate }}<span class="level-label">{{ "PRO" | translate  }}</span></h3>
                                 <div class="level-bar">
                                     <div class="level-bar-inner" data-level="85%">
                                     </div>
@@ -276,7 +277,7 @@
                             </div><!--//item-->
 
                             <div class="item">
-                                <h3 class="level-title">Ionic (cordova)<span class="level-label">Pro</span></h3>
+                                <h3 class="level-title">{{"COMPETENCES_6"  | translate }}<span class="level-label">{{ "PRO" | translate  }}</span></h3>
                                 <div class="level-bar">
                                     <div class="level-bar-inner" data-level="85%">
                                     </div>
@@ -284,7 +285,7 @@
                             </div><!--//item-->
 
                             <div class="item">
-                                <h3 class="level-title">Java Android <span class="level-label">Pro</span></h3>
+                                <h3 class="level-title">{{"COMPETENCES_7"  | translate }} <span class="level-label">{{ "PRO" | translate  }}</span></h3>
                                 <div class="level-bar">
                                     <div class="level-bar-inner" data-level="75%">
                                     </div>
@@ -292,7 +293,7 @@
                             </div><!--//item-->
 
                             <div class="item">
-                                <h3 class="level-title">Unity <span class="level-label">Maitrise</span></h3>
+                                <h3 class="level-title">{{"COMPETENCES_8"  | translate }} <span class="level-label">{{ "MAITRISE" | translate  }}</span></h3>
                                 <div class="level-bar">
                                     <div class="level-bar-inner" data-level="50%">
                                     </div>
@@ -300,7 +301,7 @@
                             </div><!--//item-->
 
                             <div class="item">
-                                <h3 class="level-title">Blender <span class="level-label">Connaissances</span></h3>
+                                <h3 class="level-title">{{"COMPETENCES_9"  | translate }} <span class="level-label">{{ "CONNAISSANCES" | translate  }}</span></h3>
                                 <div class="level-bar">
                                     <div class="level-bar-inner" data-level="40%">
                                     </div>
@@ -308,7 +309,15 @@
                             </div><!--//item-->
 
                             <div class="item">
-                                <h3 class="level-title">Python <span class="level-label">Connaissances</span></h3>
+                                <h3 class="level-title">{{"COMPETENCES_10"  | translate }} <span class="level-label">{{ "CONNAISSANCES" | translate  }}</span></h3>
+                                <div class="level-bar">
+                                    <div class="level-bar-inner" data-level="30%">
+                                    </div>
+                                </div><!--//level-bar-->
+                            </div><!--//item-->
+
+                            <div class="item">
+                                <h3 class="level-title">{{"COMPETENCES_11"  | translate }} <span class="level-label">{{ "CONNAISSANCES" | translate  }}</span></h3>
                                 <div class="level-bar">
                                     <div class="level-bar-inner" data-level="30%">
                                     </div>
@@ -340,19 +349,19 @@
 
             <aside class="education aside section">
                 <div class="section-inner">
-                    <h2 class="heading">Formations</h2>
+                    <h2 class="heading">{{ "FORMATIONS" | translate  }}</h2>
                     <div class="content">
                         <div class="item">
-                            <h3 class="title"><i class="fa fa-graduation-cap"></i> Double Licence de Droit et Sciences politiques</h3>
-                            <h4 class="university">Université Lyon III, France <span class="year">(2013-2016)</span></h4>
+                            <h3 class="title"><i class="fa fa-graduation-cap"></i> {{ "DROITSCIENCESPO_DIPLOMA" | translate  }}</h3>
+                            <h4 class="university">{{ "LYONIII_UNIVERSITY" | translate  }} <span class="year">(2013-2016)</span></h4>
                         </div><!--//item-->
                         <div class="item">
-                            <h3 class="title"><i class="fa fa-graduation-cap"></i> Diplôme Etudiant Entrepreneur (D2E)</h3>
-                            <h4 class="university">Université de Lyon, France <span class="year">(2015)</span></h4>
+                            <h3 class="title"><i class="fa fa-graduation-cap"></i> {{ "D2E_DIPLOMA" | translate  }}</h3>
+                            <h4 class="university">{{ "LYON_UNIVERSITY" | translate  }} <span class="year">(2015)</span></h4>
                         </div><!--//item-->
                         <div class="item">
-                            <h3 class="title"><i class="fa fa-graduation-cap"></i> Certificat de réussite vérifié MIT Entrepreneurship 101 - 102</h3>
-                            <h4 class="university">edX MIT, USA <span class="year">(Janvier 2015 - Mai 2015)</span></h4>
+                            <h3 class="title"><i class="fa fa-graduation-cap"></i> {{ "ENTREPRENEURSHIP_MIT_DIPLOMA" | translate  }} </h3>
+                            <h4 class="university">{{ "MIT" | translate  }}<span class="year"> (2015)</span></h4>
                         </div><!--//item-->
                     </div><!--//content-->
                 </div><!--//section-inner-->
@@ -360,24 +369,24 @@
 
             <aside class="languages aside section">
                 <div class="section-inner">
-                    <h2 class="heading">Langues</h2>
+                    <h2 class="heading">{{ "LANGUAGES" | translate  }}</h2>
                     <div class="content">
                         <ul class="list-unstyled">
                             <li class="item">
-                                <span class="title"><strong>Français:</strong></span>
-                                <span class="level">Langue Maternelle</span>
+                                <span class="title"><strong>{{ "FRENCH" | translate  }} :</strong></span>
+                                <span class="level">{{ "LANGUAGE_MATERNEL_RANK" | translate  }} </span>
                             </li><!--//item-->
                             <li class="item">
-                                <span class="title"><strong>English:</strong></span>
-                                <span class="level">Courant</span>
+                                <span class="title"><strong>{{ "ENGLISH" | translate  }} :</strong></span>
+                                <span class="level">{{ "LANGUAGE_FLUENT_RANK" | translate  }}</span>
                             </li><!--//item-->
                             <li class="item">
-                                <span class="title"><strong>Espagnol:</strong></span>
-                                <span class="level">Scolaire </span>
+                                <span class="title"><strong>{{ "SPANISH" | translate  }} :</strong></span>
+                                <span class="level">{{ "LANGUAGE_SCHOLAR_RANK" | translate  }} </span>
                             </li><!--//item-->
                             <li class="item">
-                                <span class="title"><strong>Japonais:</strong></span>
-                                <span class="level">Scolaire </span>
+                                <span class="title"><strong>{{ "JAPANESE" | translate  }} :</strong></span>
+                                <span class="level">{{ "LANGUAGE_SCHOLAR_RANK" | translate  }}</span>
                             </li><!--//item-->
                         </ul>
                     </div><!--//content-->
@@ -396,14 +405,13 @@
 
             <aside class="list music aside section">
                 <div class="section-inner">
-                    <h2 class="heading">Hobbies</h2>
+                    <h2 class="heading">{{ "HOBBIES" | translate  }}</h2>
                     <div class="content">
                         <ul class="list-unstyled">
-                            <li><i class="fa fa-laptop"></i> <a href="#">Modélisation 3D avec Blender</a></li>
-                            <li><i class="fa fa-code"></i> <a href="#">Machine Learning</a></li>
-                            <li><i class="fa fa-history"></i> <a href="#">Histoire des Etats Unis</a></li>
-                            <li><i class="fa fa-book"></i> <a href="http://www.babelio.com/auteur/Natsume-Soseki/26696">Natsume Soseki</a></li>
-                            <li><i class="fa fa-gamepad"></i> <a href="#">Age of Empires 2</a></li>
+                            <li><i class="fa fa-laptop"></i> <a href="#">{{ "HOBBIES1" | translate  }}</a></li>
+                            <li><i class="fa fa-code"></i> <a href="#">{{ "HOBBIES2" | translate  }}</a></li>
+                            <li><i class="fa fa-comments" aria-hidden="true"></i> <a href="#">{{ "HOBBIES3" | translate  }}</a></li>
+                           <li><i class="fa fa-gamepad"></i> <a href="#">{{ "HOBBIES4" | translate  }}</a></li>
                         </ul>
                     </div><!--//content-->
                 </div><!--//section-inner-->
@@ -411,12 +419,11 @@
 
             <aside class="list conferences aside section">
                 <div class="section-inner">
-                    <h2 class="heading">Conférences</h2>
+                    <h2 class="heading">{{ "CONFERENCE" | translate  }}</h2>
                     <div class="content">
                         <ul class="list-unstyled">
-                            <li><i class="fa fa-calendar"></i> <a href="#">Intervention au GEA Université Lyon II</a> (Lyon)</li>
-                            <li><i class="fa fa-calendar"></i> <a href="http://www.journeeseconomie.org/index.php?arc=p4&num=1335" target="_blank">Intervention au Bercy Café de l'économie Lyon</a> (Lyon)</li>
-
+                            <li><i class="fa fa-calendar"></i> <a href="#">{{"CONFERENCE1_TITLE" | translate }}</a> (Lyon)</li>
+                            <li><i class="fa fa-calendar"></i> <a href="http://www.journeeseconomie.org/index.php?arc=p4&num=1335" target="_blank">{{"CONFERENCE2_TITLE" | translate }}</a> (Lyon)</li>
                         </ul>
                     </div><!--//content-->
                 </div><!--//section-inner-->

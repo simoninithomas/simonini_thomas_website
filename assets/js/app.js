@@ -7,13 +7,14 @@
  ************************************************************************************************************************
  ************************************************************************************************************************
  ************************************************************************************************************************/
-angular.module('app', ['app.controllers', 'ngRoute','pascalprecht.translate', 'angulartics', 'angulartics',
-    'npm install angulartics'])
+angular.module('app', ['ngRoute', 'app.controllers', 'pascalprecht.translate', 'angulartics', 'angulartics',
+        'angulartics.google.analytics'])
 
-    .config(function($routeProvider){
+    .config(function ($routeProvider) {
             $routeProvider
-                .when('/',{
-                    templateUrl: 'assets/templates/french.html'
+                .when('/', {
+                    templateUrl: 'assets/templates/home.html',
+                    controller: 'homeCtrl'
                 })
                 .otherwise('/')
         }
@@ -21,141 +22,292 @@ angular.module('app', ['app.controllers', 'ngRoute','pascalprecht.translate', 'a
 
     .config(['$translateProvider', function ($translateProvider) {
         $translateProvider.translations('en', {
-                //User Page
-                HEADER_PROFESSION : "Full Stack Developer",
-                HEADLINE_USER:"<b>Find your next mobile game</b>",
-                INTRO_TEXT_USER: "Sir PlayABot is an AI on Messenger that <b>suggests games based on your tastes</b>",
-                WHY: "Why submit my game ?",
+                //Header
+                HEADER_PROFESSION: "Full Stack Developer #JS",
+                CONTACT_ME: "Contact me",
+                ABOUT_TITLE: "About me",
+                ABOUT: "<a  href='https://www.newsswipe.io' analytics-on='click' analytics-event='Visit PlayBot Website'>PlayBot</a> Founder and CEO. PlayBot is a Messenger bot that proposes games based on user tastes. (<a href='http://entreprendre.univ-lyon3.fr/incubateur-jean-moulin/'>Jean Moulin's Incubator</a>). Full Stack Developer (NodeJS, Express, AngularJS, MongoDB). Applications developer Cordova and Native (Java).",
+
+            POSITION: "Lyon, France",
+                EMAIL: "simonini_thomas@outlook.fr",
+                MOBILE_PHONE: "+33 6 70 23 46 06",
+                WEBSITE: "www.simoninithomas.com",
+
+            //Compétences
+            COMPETENCES: "Skills",
+            COMPETENCES_1: "HTML - CSS (Bootstrap)",
+            COMPETENCES_2: "PHP & MySQL",
+            COMPETENCES_3: "NodeJS & Express",
+            COMPETENCES_4: "MongoDB",
+            COMPETENCES_5: "AngularJS",
+            COMPETENCES_6: "Ionic (cordova)",
+            COMPETENCES_7: "Java pour Android)",
+            COMPETENCES_8: "Unity",
+            COMPETENCES_9: "Blender",
+            COMPETENCES_10: "Python",
+            COMPETENCES_11: "Augmented Reality",
+
+            EXPERT: "Expert",
+            PRO: "Pro",
+            MAITRISE: "Proficiency",
+            CONNAISSANCES: "Proficiency",
 
 
-                HEADLINE: "The <b>simpliest way</b> to <b>find success</b> with your mobile game",
-                INTRO_TEXT: "Sir PlayABot is a bot on Messenger that <b>suggests games based on user tastes.</b>",
-                WAITING_LIST1: "Developers you want <b>to increase dramatically the number of your players ?</b> Submit your games to our bot it's <b> free for the first 100 developers </b>",
-                ONLY: "There are only <b>98</b> places left !",
-                JOIN_BUTTON: "Submit my game, it's free!",
+            //Formations
+            DROITSCIENCESPO_DIPLOMA: "Bachelor's degree of Law and Politic sciences",
+            D2E_DIPLOMA: "Entrepreneurship University's degree",
+            LYONIII_UNIVERSITY: "Lyon III University, France",
+            LYON_UNIVERSITY: "Lyon University, France",
+            ENTREPRENEURSHIP_MIT_DIPLOMA: "Certificate of Achievement (verified) MIT Entrepreneurship 101 - 102",
+            MIT: "edX MIT, USA",
 
-                WAITING_LIST2 : "Want to chat with Sir PlayABot ?",
-                SPEAK_BUTTON: "<i class='fa fa-comments-o' aria-hidden='true'></i> Sir PlayABot find me a good game !",
-                SUPPORT: "They support us:",
-                KEEP_IN_TOUCH: "Keep in touch!",
-                MAILING_LIST:"Subscribe to our newsletter",
-                MORE_INFORMATION: "More information ?",
-                HOW_IT_WORKS: "How it works ?",
-                STEP_1: "<b>1st Step </b><br> Submit your game, we test it and validate it or not<br>",
-                STEP_1_FREE: "<b>Free for the first 100 developers !</b>",
-                STEP_2: "<b>2nd Step</b> <br> When we validate your game, we <b> save it in our database.</b>",
-                STEP_3: "<b>3rd Step </b><br> Your game is <b>display to our users.</b>",
+            //Languages
+            LANGUAGES: "Languages",
+            FRENCH: "French",
+            ENGLISH: "English",
+            SPANISH: "Spanish",
+            JAPANESE: "Japanese",
 
-                READY: "Developers, ready to be successful ?",
+            LANGUAGE_MATERNEL_RANK: "Naive speaker",
+            LANGUAGE_FLUENT_RANK: "Fluent",
+            LANGUAGE_SCHOLAR_RANK: "Basic Level",
 
-                SOCIAL_MEDIAS: "",
+            //Hobbies
+            HOBBIES: "Hobbies",
+            HOBBIES1: "Creating Augmented Reality products",
+            HOBBIES2: "Machine Learning",
+            HOBBIES3: "Bots dev",
+            HOBBIES4: "Video games",
 
-                SOON:"Soon",
-                //Press
-                PRESS_TITLE: "We <i class='fa fa-heart-o' aria-hidden='true'></i> the press",
-                PRESS_SUBTITLE: "We are glad to speak with you. <b>Contact us </b>",
+            //Conferences
+            CONFERENCE: "Conferences",
 
-                //Jobs
-                JOBS_TITLE: "Want to join the team?",
-                JOBS_PARAGRAPH_YOU: "<b>We’re always looking for passionated, innovative and smart people, so don’t be shy</b>. If you share our passion for bots, get in touch!",
+            CONFERENCE1_TITLE: " Speaker about entrepreneurship at Lyon II University",
+            CONFERENCE1_CITY: "Lyon",
 
-                //About
-                OUR_STORY:"Our Story : You Got Me Workin' Workin' Day And Night <i class='fa fa-music' aria-hidden='true'></i>",
-                STORY:"Sir PlayABot is a bot on Messenger that <b>suggests games based on user tastes</b>. I found this idea when I was in exams, I wanted to find a way to find good games without spending much time in Google Play",
-                OUR_TEAM:"Our team",
-                TEAM_SIMONINI:"SIMONINI Thomas, Founder of Sir PlayABot",
-                TEAM_SIMONINI_BIOGRAPHY:"I'm an entrepreneur, based in Lyon (Jean Moulin's Incubator). Full Stack Developer (NodeJS, Express, AngularJS, MongoDB). Applications developer Cordova and Native (Java, Swift). I'm a jurist. But I'm passionned about programming and new technologies since I learnt C language when I was 13 years old with the book 'C Programmming Language, 1988' and Visual C++ for Windows 3.1",
-                BE_PART_OF_THE_HISTORY:"Want to join the team?",
+            CONFERENCE2_TITLE: "Speaker at 'Bercy Café de l'économie Lyon' (Economy and Entrepreneurship)",
+            CONFERENCE2_CITY: "Lyon",
+            /****************
+             *  Last projects
+             */
+
+            LAST_PROJECTS: "Latest Projects",
+            //C'est décidé je m'en vais
+            PROJECT1_TITLE: "'It's decided I'm going' children ebook on Amazon Kindle Publishing",
+            PROJECT1_DATE: "December 2014",
+            PROJECT1_DESCRIPTION: "Illustrations created with Blender3D.",
+            PROJECT1_LINK: "See the illustrations",
+
+            //30Tiles
+            PROJECT2_TITLE: "30Tiles jeu vidéo sur Android",
+            PROJECT2_DATE: "March 2015",
+            PROJECT2_DESCRIPTION: "Reflexion game developed with C# and Unity for Android. Tap all the tiles which correspond to the posted color, the more you tap tiles, the more you win seconds and points. BUT BEWARE, the color of tiles changes every 3 seconds !",
+            PROJECT2_LINK: " Download for Android",
+
+            //DuckJump
+            PROJECT3_TITLE: "DuckJump video game on Android",
+            PROJECT3_DATE: "May 2015 - June 2015",
+            PROJECT3_DESCRIPTION: "Action game developed with C# and Unity for Android. Jump ! Jump ! Jump ! Avoid the ennemies !",
+            PROJECT3_LINK: " Download for Android",
+
+            //NewsCrawlBot
+            PROJECT4_TITLE: "NewsCrawlBot",
+            PROJECT4_DATE: "January 2016 - March 2016",
+            PROJECT4_DESCRIPTION: "Crawler in python which select articles from 10 French medias and classify it in themes thanks to algorithms.",
+            PROJECT4_LINK: "GitHub Link",
+
+            //NewsSwipe Website
+            PROJECT5_TITLE: "NewsSwipe Official Website",
+            PROJECT5_DATE: "March 2016",
+            PROJECT5_DESCRIPTION: "Official website of NewsSwipe (HTML, CSS, AngularJS). ",
+            PROJECT5_LINK: "NewsSwipe",
+
+            //NewsSwipe
+            PROJECT6_TITLE: "Founder of NewsSwipe",
+            PROJECT6_DATE: "January 2016 - Mai 2016",
+            PROJECT6_DESCRIPTION: "NewsSwipe is an app which propose news articles based on user tastes. Therefore it means that we propose only articles which fits on user tastes with a new user experience because articles are displayed in swipe cards the user can swipe on left to the next article to the right to read the article and to top to share to social medias The app use an internal crawler which select articles and classify it in themes.",
+            PROJECT6_LINK: "NewsSwipe",
+
+            //Prestashop
+            PROJECT7_TITLE: "Trainee: Marketplace creation with Prestashop <i class='fa fa-copyright' aria-hidden='true'></i> for the University of Lyon III",
+            PROJECT7_DATE: "June 2016 - July 2016",
+            PROJECT7_DESCRIPTION: "Creation of a Marketplace for the University of Lyon III.",
+            PROJECT7_LINK: "",
+
+            //Réalitée augmentée
+            PROJECT8_TITLE: "Augmented Reality",
+            PROJECT8_DATE: "July 2016 - ",
+            PROJECT8_DESCRIPTION: "Expérimentations and AR creations.",
+            PROJECT8_LINK: "",
+
+            /****************
+             *  Professionals experiences
+             */
+            PROFESSIONNAL_EXPERIENCES: "Work Experience",
+
+            PROFESSIONNAL_TITLE1: "Founder and Web Developer - ",
+            PROFESSIONAL_SUBTITLE1: "Alumni (2014 - 2015)",
+            PROFESSIONAL_PARAGRAPH1: "Web start-up which providing reviews of formations written by alumns to help freshmen to find their universities.",
+
+            PROFESSIONNAL_TITLE2: "Chargé d'accueil - ",
+            PROFESSIONAL_SUBTITLE2: "Societé générale Tournon [BANK] (Summer 2013; Summer 2014; Summer 2015)",
+            PROFESSIONAL_PARAGRAPH2: "Work in a busy bank. Welcoming clients (give them their credit cards, checkbooks, do credit transferts…).",
+
+            PROFESSIONNAL_TITLE3: "Founder and Android Developer  - ",
+            PROFESSIONAL_SUBTITLE3: "NewsSwipe (2015 - 2016)",
+            PROFESSIONAL_PARAGRAPH3: "NewsSwipe is an app which propose news articles based on user tastes. Therefore it means that we propose only articles which fits on user tastes with a new user experience because articles are displayed in swipe cards the user can swipe on left to the next article to the right to read the article and to top to share to social medias The app use an internal crawler which select articles and classify it in themes",
+
+            PROFESSIONNAL_TITLE4: "Trainee: Marketplace creation with Prestashop <i class='fa fa-copyright' aria-hidden='true'></i> for the University of Lyon III",
+            PROFESSIONAL_PARAGRAPH4: "Creation of a Marketplace for the University of Lyon III.",
+
+            //Github
+            GITHUB: "My GitHub"
 
 
-                //About
+        })
 
 
-                //About
-                ABOUT_TITLE: "About us",
-                //Footer
-                F_ENTREPRISE: "Company",
-                F_ABOUT: "About",
-                F_CONTACT: "Contact us",
-                F_JOBS: "Jobs",
-                F_PRESS: "Press",
-                F_COMMUNITY: "Community",
-                F_BLOG: "Our blog",
-                F_FOLLOWUSFACE: "Like our page ",
-                F_TWITTER: "Follow us on ",
-                F_LN: "Follow us on ",
-                F_TERMSOFUSE: "Terms of use",
-                F_LANGUAGE: "Language",
-                F_FRENCH: "French",
-                F_ENGLISH: "English"
-
-
-            })
             .translations('fr', {
-                HEADLINE_USER:"<b>Trouvez votre prochain jeu.</b>",
-                INTRO_TEXT_USER: "Sir PlayABot est une intelligence artificielle sur Messenger qui vous propose <b>gratuitement des jeux adaptés à vos goûts</b>",
-                WHY: "Pourquoi soumettre mon jeu ?",
+                //Header
+                HEADER_PROFESSION: "Developpeur Full Stack #JS",
+                CONTACT_ME: "Me Contacter",
+                ABOUT_TITLE: "A propos",
+                ABOUT: "Fondateur de <a href='https://www.newsswipe.io'>PlayBot</a>. Développeur et entrepreneur sur Lyon (Incubé à l'<a href='http://entreprendre.univ-lyon3.fr/incubateur-jean-moulin/'>Incubateur Jean Moulin</a>). Notamment spécialisé en NodeJS et Express pour les languages backend. En HTML, CSS, AngularJS pour le FrontEnd. Ionic (cordova) et Android (Java) pour le développement d'applications. ",
+                POSITION: "Lyon, France",
+                EMAIL: "simonini_thomas@outlook.fr",
+                MOBILE_PHONE: "06 70 23 46 06",
+                WEBSITE: "www.simoninithomas.com",
+
+                //Compétences
+                COMPETENCES: "Compétences",
+                COMPETENCES_1: "HTML - CSS (Bootstrap)",
+                COMPETENCES_2: "PHP & MySQL",
+                COMPETENCES_3: "NodeJS & Express",
+                COMPETENCES_4: "MongoDB",
+                COMPETENCES_5: "AngularJS",
+                COMPETENCES_6: "Ionic (cordova)",
+                COMPETENCES_7: "Java pour Android)",
+                COMPETENCES_8: "Unity",
+                COMPETENCES_9: "Blender",
+                COMPETENCES_10: "Python",
+                COMPETENCES_11: "Réalité augmentée",
+
+                EXPERT: "Expert",
+                PRO: "Pro",
+                MAITRISE: "Maitrise",
+                CONNAISSANCES: "Connaissances",
 
 
+                //Formations
+                DROITSCIENCESPO_DIPLOMA: "Double Licence de Droit et Sciences politique",
+                D2E_DIPLOMA: "Université de Lyon",
+                LYONIII_UNIVERSITY: "Université Jean Moulin Lyon III, France",
+                LYON_UNIVERSITY: "Université de Lyon, France",
+                ENTREPRENEURSHIP_MIT_DIPLOMA: "Certificat de réussite vérifié MIT Entrepreneurship 101 - 102",
+                MIT: "edX MIT, USA",
 
-                HEADLINE: "<b>Faire connaître vos jeux </b> n'aura jamais été aussi <b>simple</b>",
-                INTRO_TEXT: "Sir PlayABot est un bot sur Messenger qui <b>propose à l'utilisateur des jeux adaptés à ses goûts</b>",
-                WAITING_LIST1: "Développeurs, vous souhaitez <b>faire connaître votre jeu au plus grand nombre ?</b> Proposez votre jeu à notre bot, c'est <b>gratuit pour nos 100 premiers développeurs !</b>",
-                ONLY: "Il ne reste plus que <b>98</b> places gratuites !",
-                WAITING_LIST2 : "Envie de parler à Sir PlayABot ?",
-                SPEAK_BUTTON: "<i class='fa fa-comments-o' aria-hidden='true'></i> Sir PlayABot trouve moi un jeu !",
-                JOIN_BUTTON: "Faire connaître mon jeu gratuitement",
-                SUPPORT: "Ils nous soutiennent :",
-                KEEP_IN_TOUCH: "Suivez-nous !",
-                SOCIAL_MEDIAS: "Sur les réseaux sociaux",
-                MAILING_LIST:"En vous inscrivant à notre newsletter",
-                MAILING_LIST_BUTTON:"M'inscrire",
-                MORE_INFORMATION: "Plus d'informations ?",
+                //Languages
+                LANGUAGES: "Langues",
+                FRENCH: "Français",
+                ENGLISH: "Anglais",
+                SPANISH: "Espagnol",
+                JAPANESE: "Japonais",
 
-                HOW_IT_WORKS: "Comment ça marche ?",
-                STEP_1: "<b>Etape 1 </b><br> Vous proposez à notre robot votre jeu, soumis à notre validation<br>",
-                STEP_1_FREE: "<b>Gratuit pour nos 100 premiers développeurs !</b>",
-                STEP_2: "<b>Etape 2</b> <br> Une fois que nous acceptons votre jeu, nous <b>l'inscrivons dans notre base de données</b>",
-                STEP_3: "<b>Etape 3 </b><br> Votre jeu est <b>proposé à nos utilisateurs</b>",
+                LANGUAGE_MATERNEL_RANK: "Langue Maternelle",
+                LANGUAGE_FLUENT_RANK: "Courant",
+                LANGUAGE_SCHOLAR_RANK: "Scolaire",
 
-                READY: "Prêt à faire connaître votre jeu ?",
+                //Hobbies
+                HOBBIES: "Mes hobbies",
+                HOBBIES1: "Créations en réalité augmentée",
+                HOBBIES2: "Machine Learning",
+                HOBBIES3: "Créations de bots",
+                HOBBIES4: "Jeux vidéos",
 
-                //About
-                ABOUT_TITLE: "Qui sommes-nous ?",
-                OUR_STORY:"Notre histoire : You Got Me Workin' Workin' Day And Night <i class='fa fa-music' aria-hidden='true'></i>",
-                STORY:"Sir PlayABot est un Bot sur messenger qui propose instantanément à l’utilisateur des jeux/apps adaptés à ses goûts afin de rompre son ennui. Il suffit à l’utilisateur de dire qu’il s’ennuie et nous lui proposons des jeux/apps adaptés à ses goûts. L'idée m'est venue quand moi même je m'ennuyais durant mes révisions pour les examens et que je cherchais des jeux sur Google Play en passant beaucoup de temps pour finalement rien trouver.",
-                OUR_TEAM:"Notre équipe",
-                TEAM_SIMONINI:"SIMONINI Thomas, Fondateur",
-                TEAM_SIMONINI_BIOGRAPHY:"21 ans, je suis développeur et entrepreneur sur Lyon (Incubé à l'Incubateur Jean Moulin). Notamment spécialisé en NodeJS et Express pour les languages backend. En HTML, CSS, AngularJS pour le FrontEnd. Ionic (cordova) et Android (Java) pour le développement d'applications. De formation juridique, je suis passionné par la programmation et les nouvelles technologies depuis que j'ai appris le C avec le sempiternel 'Programming C Language' de 1988 sur Visual C++ pour Windows 3.1 à mes 13 ans.",
-                BE_PART_OF_THE_HISTORY:"Tu veux nous rejoindre ?",
+                //Conferences
+                CONFERENCE: "Conférences",
 
+                CONFERENCE1_TITLE: "Intervention au GEA Université Lyon II",
+                CONFERENCE1_CITY: "Lyon",
 
-                SOON:"En cours de rédaction",
-                //Jobs
-                JOBS_TITLE: "Envie de rejoindre l'équipe ?",
-                JOBS_PARAGRAPH_YOU: "<b>Nous recherchons constament des passionnés, des talentueux, ne soyez pas timide</b>. Vous êtes passionnés et souhaitez participer à la révolution des bots avec PlayBot ? Contactez-nous.",
-                JOBS_BUTTON: "Contactez-nous",
+                CONFERENCE2_TITLE: "Intervention au Bercy Café de l'économie Lyon",
+                CONFERENCE2_CITY: "Lyon",
+                /****************
+                 *  Last projects
+                 */
 
-                //Press
-                PRESS_TITLE: "Nous <i class='fa fa-heart-o' aria-hidden='true'></i> la presse",
-                PRESS_SUBTITLE: "Nous sommes toujours ravis de vous rencontrer. <b>N'hésitez pas à nous contacter au</b>",
+                LAST_PROJECTS: "Derniers projets",
+                //C'est décidé je m'en vais
+                PROJECT1_TITLE: "C'est décidé je m'en vais' ebook pour enfants sur Amazon Kindle Publishing",
+                PROJECT1_DATE: "Décembre 2014",
+                PROJECT1_DESCRIPTION: "Illustrations effecutées avec Blender.",
+                PROJECT1_LINK: "Voir les illustrations",
 
+                //30Tiles
+                PROJECT2_TITLE: "30Tiles jeu vidéo sur Android",
+                PROJECT2_DATE: "Mars 2015",
+                PROJECT2_DESCRIPTION: "Jeu de réflexe développé en C# pour Android avec le moteur de jeu Unity. Le principe : Touchez tous les carreaux qui correspondent à la couleur affichée, plus vous en touchez, plus vous gagnez des secondes et des points. MAIS ATTENTION, la couleur des carreaux change toutes les 3 secondes !",
+                PROJECT2_LINK: " Télécharger pour Android",
 
-                //Footer
-                F_ENTREPRISE: "Entreprise",
-                F_ABOUT: "A propos",
-                F_CONTACT: "Contactez-nous",
-                F_JOBS: "Rejoignez-nous",
-                F_PRESS: "Presse",
-                F_COMMUNITY: "Communauté",
-                F_BLOG: "Notre blog",
-                F_FOLLOWUSFACE: "Aimez notre page ",
-                F_TWITTER: "Suivez-nous sur ",
-                F_LN: "Suivez-nous sur ",
-                F_TERMSOFUSE: "Conditions d'utilisation",
-                F_LANGUAGE: "Langue",
-                F_FRENCH:"Français",
-                F_ENGLISH:"Anglais"
+                //DuckJump
+                PROJECT3_TITLE: "DuckJump jeu vidéo sur Android",
+                PROJECT3_DATE: "Mai 2015 - Juin 2015",
+                PROJECT3_DESCRIPTION: "Jeu d'action développé en C# pour Android avec le moteur de jeu Unity. Le principe : Faites sauter le canard pour éviter les ennemis.",
+                PROJECT3_LINK: " Télécharger pour Android",
+
+                //NewsCrawlBot
+                PROJECT4_TITLE: "NewsCrawlBot",
+                PROJECT4_DATE: "Janvier 2016 - Mars 2016",
+                PROJECT4_DESCRIPTION: "Crawler en Python indexant les articles de 10 médias français (Figaro, le Monde, Challenges, Maddyness...) et les classant selon leurs thèmes. Afin d’être proposés uniquement aux utilisateurs aimant ledit thème. Renvoyant ses résultats sur un backend en Parse (BAAS)",
+                PROJECT4_LINK: "Lien GitHub",
+
+                //NewsSwipe Website
+                PROJECT5_TITLE: "NewsSwipe Site web officiel",
+                PROJECT5_DATE: "Mars 2016",
+                PROJECT5_DESCRIPTION: "Site officiel du projet NewsSwipe développé en HTML, CSS, AngularJS.",
+                PROJECT5_LINK: "NewsSwipe",
+
+                //NewsSwipe
+                PROJECT6_TITLE: "Fondateur de NewsSwipe",
+                PROJECT6_DATE: "Janvier 2016 - Avril 2016",
+                PROJECT6_DESCRIPTION: "NewsSwipe, est une application smartphone de news qui regroupe les médias d’informations. Le but est de générer avec une expérience utilisateur innovante des articles adaptés aux goûts de l’utilisateur tout en lui faisant découvrir des médias qu’il ne connaissait pas. Il peut décider de lire l’article proposé en « swipant » à gauche ou à droite pour passer à un autre. Cette application fonctionne grâce à un crawler (Robot d’indexation) intitulé NewsCrawlBot, c’est un robot scannant les articles des différents médias afin de les classer selon leurs thèmes. Afin d’être proposés uniquement aux utilisateurs aimant ledit thème",
+                PROJECT6_LINK: "NewsSwipe",
+
+                //Prestashop
+                PROJECT7_TITLE: "Mise en place et intégration d'une Marketplace Prestashop <i class='fa fa-copyright' aria-hidden='true'></i> pour l'Université Lyon III",
+                PROJECT7_DATE: "Juin 2016 - Juillet 2016",
+                PROJECT7_DESCRIPTION: "Intégration d'une marketplace pour la vente de goodies à l'image de l'Université Jean Moulin (Lyon III) ",
+                PROJECT7_LINK: "",
+
+                //Réalitée augmentée
+                PROJECT8_TITLE: "Réalitée augmentée",
+                PROJECT8_DATE: "Juillet 2016 - ",
+                PROJECT8_DESCRIPTION: "Expérimentations de créations en réalité augmentée",
+                PROJECT8_LINK: "",
+
+                /****************
+                 *  Professionals experiences
+                 */
+                PROFESSIONNAL_EXPERIENCES: "Expériences professionnelles",
+
+                PROFESSIONNAL_TITLE1: "Fondateur et Développeur Web - ",
+                PROFESSIONAL_SUBTITLE1: "Alumni (2014 - 2015)",
+                PROFESSIONAL_PARAGRAPH1: "Start-up web qui permettait aux anciens étudiants de pouvoir noter et commenter les formations qu'ils ont effecutées selon 3 critières (qualité de la formation, des infrastructures, réels débouchés professionnels) afin de permettre aux étudiants de pouvoir choisir leurs formations.",
+
+                PROFESSIONNAL_TITLE2: "Chargé d'accueil - ",
+                PROFESSIONAL_SUBTITLE2: "Société générale Tournon (Eté 2013; Eté 2014; Eté 2015)",
+                PROFESSIONAL_PARAGRAPH2: "Accueil des clients (remise des chèques, prise de rendez vous, réalisation de virements, déblocage cartes), archivage et mise en conformité des dossiers clients, standard téléphonique.",
+
+                PROFESSIONNAL_TITLE3: "Fondateur et Développeur Android - ",
+                PROFESSIONAL_SUBTITLE3: "NewsSwipe (2015 - 2016)",
+                PROFESSIONAL_PARAGRAPH3: "NewsSwipe, est une application smartphone de news qui regroupe les médias d’informations. Le but est de générer avec une expérience utilisateur innovante des <span class='bold'>articles adaptés aux goûts de l’utilisateur tout en lui faisant découvrir des médias qu’il ne connaissait pas</span>. Il peut décider de lire l’article proposé en « swipant » à gauche ou à droite pour passer à un autre. <span class='bold'>Cette application fonctionne grâce à un crawler (Robot d’indexation) intitulé NewsCrawlBot, c’est un robot scannant les articles des différents médias afin de les classer selon leurs thèmes. Afin d’être proposés uniquement aux utilisateurs aimant ledit thème.</span>",
+
+                PROFESSIONNAL_TITLE4: "Stagiaire : intégrateur d'une marketplace Prestashop <i class='fa fa-copyright' aria-hidden='true'></i> - <span class='place'><a href='http://entreprendre.univ-lyon3.fr/incubateur-jean-moulin/'>Incubateur Jean Moulin</a></span> <span class='year'>(Juin 2016 - Septembre 2016)</span>",
+                PROFESSIONAL_PARAGRAPH4: "Mise en place et intégration d'une Marketplace Prestashop <i class='fa fa-copyright' aria-hidden='true'></i> pour l'Université Lyon III",
+
+                //Github
+                GITHUB: "Mon GitHub"
+
 
             });
         $translateProvider.preferredLanguage('en');

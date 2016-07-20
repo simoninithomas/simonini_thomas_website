@@ -11,7 +11,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Full Stack Developper">
+    <meta name="description" content="SIMONINI Thomas : Founder of PlayBot and Full Stack Developer #NodeJS">
 
     <!-- Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,300italic,400italic' rel='stylesheet'
@@ -43,6 +43,13 @@
     <!-- Angular -->
     <script src="assets/plugins/angularjs/angular.min.js"></script>
 
+    <!-- AngularJS Translate JS -->
+    <script src="node_modules/angular-translate/dist/angular-translate.min.js"></script>
+
+    <!-- AngularJS Analytics -->
+    <script src="bower_components/angulartics/dist/angulartics.min.js"></script>
+    <script src="bower_components/angulartics-google-analytics/dist/angulartics-ga.min.js"></script>
+
     <!-- Angular Routes -->
     <script src="assets/plugins/angularjs/angular-route.min.js"></script>
 
@@ -52,16 +59,21 @@
     <!-- Angular controllers -->
     <script src="assets/js/controllers.js"></script>
 
-    <!-- AngularJS Translate JS -->
-    <script src="node_modules/angular-translate/dist/angular-translate.min.js"></script>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+
+        ga('send', 'pageview');
+
+    </script>
 
 </head>
 
 <body ng-app="app">
-<div class="center">
-    <a href="#/english" class="btn btn-danger btn-lg" data-wow-delay="0.7s">English</a>
-    <a href="#/french" class="btn btn-success btn-lg" data-wow-delay="0.7s">French</a>
-</div>
+
 <ng-view>
 
 </ng-view>
